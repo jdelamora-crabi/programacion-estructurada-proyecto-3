@@ -3,7 +3,7 @@ Programación estructurada
 
 Este proyecto consiste en dos etapas: una primera de compilación de código preexistente y la segunda de modificación de funcionalidades.
 
-## Etapa 1: Proyceto base
+## Etapa 1: Proyecto base
 La primera etapa del proyecto consiste en configurar y construir el proyecto base, para posteriormente trabajar sobre él y agregar funcionalidades.
 
 El proyecto base da lo necesario para leer y escribir archivos de manera simple, por líneas.
