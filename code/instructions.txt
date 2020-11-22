@@ -1,0 +1,3 @@
+# Comando para compilar el proyecto base, ejecutar desde la carpeta code/
+
+gcc analyzer.c -o analyzer.exe -Iincludes ./src/FileReader.c
