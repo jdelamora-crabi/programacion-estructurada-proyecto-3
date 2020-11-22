@@ -26,7 +26,7 @@ Los archivos base que se proveen están acomodados en la siguiente estructura. R
 │                        
 ├── analyzer.c │         # archivo principal, contiene la función main()
 │                        
-├── instructions.txt │         # archivo con instrucciones
+├── instructions.txt │   # archivo con instrucciones
 ├── sortme.txt │         # archivo para comprobar que el sort funciona
 └── test.txt             # archivo de prueba, para comprobar la base que funciona.
 ```
