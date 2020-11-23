@@ -80,6 +80,8 @@ El proyecto base siempre lee el mismo archivo (`test.txt`) y no realiza ninguna 
 
 En caso de un error, el programa debe mostrar un mensaje y salir.
 
+![](docs/error.png)
+
 >💡**Tip**:
 >
 >Recuerden que la función main puede recibir argumentos, que se indican desde la ejecución del programa, y son recibidos como una lista de strings.
@@ -91,8 +93,8 @@ Este es el formato de ejecución del programa:
 ./analyzer <filename> <operation> <argument>
 ```
 - `filename`: nombre del archivo que se quiere analizar, por ejemplo `prueba.txt`
-- `operation`: una palabra con la operacion a ejecutar, por ejemplo `countChar`
-- `argument`: una palabra o una letra con el argumento que usará operation, por ejemplo `a` para que la operacion `countChar` cuente las letras `a`.
+- `operation`: una palabra con la operacion a ejecutar, por ejemplo `findChar`
+- `argument`: una palabra o una letra con el argumento que usará operation, por ejemplo `a` para que la operacion `findChar` cuente las letras `a`.
 
 #### Algunos ejemplos de uso
 
@@ -158,3 +160,6 @@ Se ha guardado sorted.txt
 >💡 **Tip**:
 >
 >Puedes usar el algoritmo que ya trabajamos de bubblesort pero que en lugar de intercambiar dos numeros, que intercambie dos strings usando `strcpy`.
+
+### Archivos de prueba
+En la carpeta `test files/` se incluyen varios archivos para que pruebes tus funciones.
