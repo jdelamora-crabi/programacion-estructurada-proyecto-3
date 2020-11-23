@@ -3,7 +3,7 @@ Programación estructurada
 
 Este proyecto consiste en dos etapas: una primera de compilación de código preexistente y la segunda de modificación de funcionalidades.
 
-## Etapa 1: Proyceto base
+## Etapa 1: Proyecto base
 La primera etapa del proyecto consiste en configurar y construir el proyecto base, para posteriormente trabajar sobre él y agregar funcionalidades.
 
 El proyecto base da lo necesario para leer y escribir archivos de manera simple, por líneas.
@@ -26,7 +26,7 @@ Los archivos base que se proveen están acomodados en la siguiente estructura. R
 │                        
 ├── analyzer.c │         # archivo principal, contiene la función main()
 │                        
-├── instructions.txt │         # archivo con instrucciones
+├── instructions.txt │   # archivo con instrucciones
 ├── sortme.txt │         # archivo para comprobar que el sort funciona
 └── test.txt             # archivo de prueba, para comprobar la base que funciona.
 ```
@@ -60,6 +60,7 @@ Se imprimirá en la consola las primeras 100 líneas, y se creará un archivo de
 >💡 **Tip**
 >
 >Puedes modificar los #defines FILELINES_MAX_LINES en el archivo `FileReader.h` para leer todo el archivo.
+<<<<<<< HEAD
 
 ## Parte 2: Mejoras del proyecto
 A continuación, se describen los cambios que se deben efectuar sobre el programa base. Básicamente habrá dos cosas que tendrán que implementar:
@@ -158,3 +159,5 @@ Se ha guardado sorted.txt
 >💡 **Tip**:
 >
 >Puedes usar el algoritmo que ya trabajamos de bubblesort pero que en lugar de intercambiar dos numeros, que intercambie dos strings usando `strcpy`.
+=======
+>>>>>>> e1c101ee334b477c01f103e591c8ee90084b97a6
