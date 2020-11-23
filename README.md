@@ -60,3 +60,101 @@ Se imprimirá en la consola las primeras 100 líneas, y se creará un archivo de
 >💡 **Tip**
 >
 >Puedes modificar los #defines FILELINES_MAX_LINES en el archivo `FileReader.h` para leer todo el archivo.
+
+## Parte 2: Mejoras del proyecto
+A continuación, se describen los cambios que se deben efectuar sobre el programa base. Básicamente habrá dos cosas que tendrán que implementar:
+
+1. Implementar las funciones que están definidas en los archivos `FileInfo.h` y `FileProcessing.h`. Estas funciones utilizan la estructura FileLines definida en `FileReader.h` y generan algunos resultados o modifican el struct. Usarán estas funciones en el siguiente paso.
+2. Que el usuario pueda especificar, desde la ejecución del programa:
+    1. Qué archivo quiere leer
+    2. Qué operación desea realizar
+3. El argumento que requiera la operación a realizar.
+
+### Implementación de FileInfo.h y FileProcessing.h
+En la carpeta `includes/` podrán encontrar los archivos de cabecera, con las funciones que deben implementar.
+
+Cada implementación debe tener su propio archivo; en total, crearás `FileInfo.c` y `FileProcessing.c`. Estos archivos deben ser colocados en la carpeta`src/` y, para compilarlos, se necesitará que los incluyas en la instrucción de compilación.
+
+### Argumentos de programa
+El proyecto base siempre lee el mismo archivo (`test.txt`) y no realiza ninguna operación sobre él. El comportamiento deseado es que el usuario pueda especificar, al ejecutar el programa, qué archivo desea analizar y qué operación realizar.
+
+En caso de un error, el programa debe mostrar un mensaje y salir.
+
+>💡**Tip**:
+>
+>Recuerden que la función main puede recibir argumentos, que se indican desde la ejecución del programa, y son recibidos como una lista de strings.
+>
+>Ustedes pueden tomar esa lista de strings e identificar qué operación se quiere realizar (¿alguien dijo `strcmp`?) y, dependiendo de esto, interpretar el tercer argumento. Al final, es muy parecido a los menús, pero se leen todos los argumentos al arrancar el programa y luego se evalúan.
+
+Este es el formato de ejecución del programa:
+```shell
+./analyzer <filename> <operation> <argument>
+```
+- `filename`: nombre del archivo que se quiere analizar, por ejemplo `prueba.txt`
+- `operation`: una palabra con la operacion a ejecutar, por ejemplo `countChar`
+- `argument`: una palabra o una letra con el argumento que usará operation, por ejemplo `a` para que la operacion `countChar` cuente las letras `a`.
+
+#### Algunos ejemplos de uso
+
+**Contar las veces que aparece la letra `a` en el archivo `test.txt`**
+```shell
+> ./analyzer test.txt findChar a
+La letra a aparece 35 veces en test.txt.
+```
+
+**Contar las palabras en el archivo `test.txt`**
+```shell
+> ./analyzer test.txt countWords
+Hay 322 palabras en test.txt.
+```
+
+**Leer el archivo `test.txt`, ordenarlo y guardarlo en `sorted.txt`**
+```shell
+> ./analyzer test.txt sort sorted.txt
+Se ha guardado sorted.txt
+```
+
+### Operaciones soportadas
+El programa tendrá dos tipos de operaciones: de información y de procesamiento. Las de información sólo muestran un resultado en la pantalla, mientras que las de procesamiento generarán un archivo nuevo de salida.
+
+#### Operaciones de información
+Estas operaciones se definen en el archivo de cabecera `FileInfo.h`, y son las siguientes:
+
+1. **FindChar**: Lee el archivo `filename` y cuenta la cantidad de veces que aparece el caracter indicado en `argument`
+
+**Ejemplo:**
+```shell
+> ./analyzer test.txt findChar a
+La letra a aparece 35 veces en test.txt.
+```
+
+2. **countWords**: lee el archivo `filename` y cuenta las palabras que contiene. En este caso no se necesita el tercer argumento.
+
+**Ejemplo**
+```shell
+> ./analyzer test.txt countWords
+Hay 322 palabras en test.txt.
+```
+
+>💡 **Tip**:
+>
+>Esta función es muy parecida a la de su examen, pero debe considerar también que puede haber palabras separadas por más de un espacio.
+
+#### Operacions de procesamiento
+Las operaciones de procesamiento modifican el struct FileLines y usan la función `saveLinesToFile()` para crear un archivo, especificado por el usuario.
+
+Para estas operaciones, el argumento `argument` siempre debe ser el nombre de un archivo a donde se guardarán los resultados, por ejemplo `sorted.txt`.
+
+Estas operaciones están descritas en el archivo `FileProcessing.h` y son las siguientes:
+
+1. **sort**: lee el archivo `filename`, ordena las líneas del struct FileLines en orden alfabético y guarda en el archivo indicado por el usuario en `argument`
+
+**Ejemplo**
+```shell
+> ./analyzer test.txt sort sorted.txt
+Se ha guardado sorted.txt
+```
+
+>💡 **Tip**:
+>
+>Puedes usar el algoritmo que ya trabajamos de bubblesort pero que en lugar de intercambiar dos numeros, que intercambie dos strings usando `strcpy`.
