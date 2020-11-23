@@ -60,7 +60,6 @@ Se imprimirá en la consola las primeras 100 líneas, y se creará un archivo de
 >💡 **Tip**
 >
 >Puedes modificar los #defines FILELINES_MAX_LINES en el archivo `FileReader.h` para leer todo el archivo.
-<<<<<<< HEAD
 
 ## Parte 2: Mejoras del proyecto
 A continuación, se describen los cambios que se deben efectuar sobre el programa base. Básicamente habrá dos cosas que tendrán que implementar:
@@ -159,5 +158,3 @@ Se ha guardado sorted.txt
 >💡 **Tip**:
 >
 >Puedes usar el algoritmo que ya trabajamos de bubblesort pero que en lugar de intercambiar dos numeros, que intercambie dos strings usando `strcpy`.
-=======
->>>>>>> e1c101ee334b477c01f103e591c8ee90084b97a6
