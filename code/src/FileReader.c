@@ -69,7 +69,7 @@ void readAllLinesAndStoreToFileLines(FILE *filePtr, FileLines *fileLinesPtr)
 
     // esta variable es para guardar la cantidad de caracteres que fueron leidos con cada getline().
     // no cuenta el caracter nulo.
-    ssize_t readChars;
+    int readChars;
 
     // vamos a leer mientras que no hayamos leído ya FILELINES_MAX_LINES y mientras que el resultado de la función
     // getline(), que nos dice cuántos caracteres se han leido, sea distinto a –1.
